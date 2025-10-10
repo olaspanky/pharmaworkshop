@@ -22,7 +22,32 @@ export default function PBRLandingPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleSubmit = (e) => {
+  interface FormData {
+    name: string;
+    email: string;
+    phone: string;
+    organization: string;
+    role: string;
+  }
+
+  interface PaymentOption {
+    country: string;
+    amount: string;
+  }
+
+  interface Speaker {
+    name: string;
+    country: string;
+    flag: string;
+  }
+
+  interface AgendaItem {
+    title: string;
+    icon: React.ElementType;
+    color: string;
+  }
+
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
     alert('Registration submitted successfully!');
