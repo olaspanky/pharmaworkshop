@@ -112,7 +112,7 @@ export default function PBRLandingPage() {
     
 
       {/* Hero Section */}
-<section className="relative pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center overflow-hidden bg-[url('/images/m11.png')] bg-center bg-cover">       
+<section className="relative pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center overflow-hidden bg-[url('/images/m11.png')] bg-center bg-cover isidora">       
   {/* Dark overlay for better text readability */}
   <div className="absolute inset-0 bg-black/40 z-0"></div>
   
