@@ -282,7 +282,7 @@ export default function PBRLandingPage() {
       </section>
 
       {/* Registration Section */}
-      <section id="register" className="py-20 px-6 bg-gradient-to-br from-slate-50 to-blue-50">
+      <section id="register" className="p-2lg:py-20 lg:px-6 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <div className="w-1 h-16 bg-[#0D1854] mb-6"></div>
@@ -294,7 +294,7 @@ export default function PBRLandingPage() {
             </p>
           </div>
 
-          <div className="bg-white border border-slate-200 rounded-xl p-8 lg:p-12 shadow-xl">
+          <div className="bg-white border border-slate-200 rounded-xl p-3 lg:p-8 lg:p-12 shadow-xl">
             <div className="grid lg:grid-cols-2 gap-12">
               <div className="bg-gradient-to-br from-[#0D1854] to-[#265F9C] text-white rounded-xl p-8 shadow-lg">
                 <h3 className="text-2xl font-bold mb-6">Investment Options</h3>
