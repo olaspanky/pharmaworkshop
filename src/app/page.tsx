@@ -66,7 +66,7 @@ export default function PBRLandingPage() {
       name: "Mr. Adedayo Ogunpitan",
       country: "Nigeria",
       flag: "🇳🇬",
-            image: "/images/as.jpg"
+            image: "/images/ao.png"
 
     },
     {
