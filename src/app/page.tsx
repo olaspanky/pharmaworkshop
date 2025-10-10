@@ -1,6 +1,8 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, Globe, Users, TrendingUp, Lightbulb, Target, ChevronRight, Menu, X, BarChart3, Presentation, Rocket } from 'lucide-react';
+import { Nav } from './components/Nav';
+import  Footer  from './components/Footer';
 
 export default function PBRLandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,17 +59,22 @@ export default function PBRLandingPage() {
     {
       name: "Mr. Adeoye Sobande",
       country: "Nigeria",
-      flag: "🇳🇬"
+      flag: "🇳🇬",
+      image: "/images/as.jpg"
     },
     {
       name: "Mr. Adedayo Ogunpitan",
       country: "Nigeria",
-      flag: "🇳🇬"
+      flag: "🇳🇬",
+            image: "/images/as.jpg"
+
     },
     {
       name: "Mr. Martins Muguira",
       country: "Kenya",
-      flag: "🇰🇪"
+      flag: "🇰🇪",
+            image: "/images/as.jpg"
+
     }
   ];
 
@@ -100,150 +107,69 @@ export default function PBRLandingPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg' : 'bg-white shadow-md'}`}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex items-center space-x-3">
-              <div>
-                <img src="pbrlogo.png" alt='PBR Life Sciences' className='h-10 w-auto'/>
-              </div>
-            </div>
-            
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#about" className="text-[#0D1854] hover:text-[#265F9C] transition-colors font-medium">About</a>
-              <a href="#speakers" className="text-[#0D1854] hover:text-[#265F9C] transition-colors font-medium">Speakers</a>
-              <a href="#agenda" className="text-[#0D1854] hover:text-[#265F9C] transition-colors font-medium">Agenda</a>
-              <a href="#register" className="bg-[#265F9C] text-white px-6 py-2.5 rounded-lg hover:bg-[#0D1854] transition-colors font-semibold shadow-md">
-                Register Now
-              </a>
-            </div>
 
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-[#0D1854] hover:text-[#265F9C] transition-colors">
-              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
-        </div>
-      </nav>
-
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-[#0D1854] md:hidden pt-20">
-          <div className="flex flex-col items-center space-y-6 p-8 text-white">
-            <a href="#about" onClick={() => setIsMenuOpen(false)} className="text-xl hover:text-cyan-300 transition-colors">About</a>
-            <a href="#speakers" onClick={() => setIsMenuOpen(false)} className="text-xl hover:text-cyan-300 transition-colors">Speakers</a>
-            <a href="#agenda" onClick={() => setIsMenuOpen(false)} className="text-xl hover:text-cyan-300 transition-colors">Agenda</a>
-            <a href="#register" onClick={() => setIsMenuOpen(false)} className="bg-[#265F9C] text-white px-8 py-4 rounded-lg font-semibold hover:bg-cyan-400 hover:text-[#0D1854] transition-colors">
-              Register Now
-            </a>
-          </div>
-        </div>
-      )}
+      <Nav/>
+    
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6 overflow-hidden" style={{background: 'linear-gradient(135deg, #0D1854 0%, #265F9C 50%, #0a1628 100%)'}}>
-        {/* Animated Background Network */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute" style={{
-            background: 'radial-gradient(circle at 20% 30%, rgba(100, 200, 255, 0.3) 0%, transparent 50%)',
-            width: '600px',
-            height: '600px',
-            top: '10%',
-            left: '60%',
-            animation: 'pulse 4s ease-in-out infinite'
-          }}></div>
-          <div className="absolute" style={{
-            background: 'radial-gradient(circle at 80% 60%, rgba(100, 200, 255, 0.2) 0%, transparent 50%)',
-            width: '800px',
-            height: '800px',
-            top: '40%',
-            right: '40%',
-            animation: 'pulse 6s ease-in-out infinite'
-          }}></div>
+<section className="relative pt-20 sm:pt-24 md:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center overflow-hidden bg-[url('/images/m11.png')] bg-center bg-cover">       
+  {/* Dark overlay for better text readability */}
+  <div className="absolute inset-0 bg-black/40 z-0"></div>
+  
+  <div className="max-w-7xl mx-auto relative z-10 w-full">
+    <div className="max-w-3xl">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 sm:mb-6 text-balance">
+        2026 Pharma West & Africa Brand Planning Workshop
+      </h1>
+      
+      <p className="text-base sm:text-lg md:text-xl text-blue-100 leading-relaxed mb-6 sm:mb-8 text-balance">
+        3 Days of Strategic Learning, Insight & Innovation in Pharma Marketing
+      </p>
+
+      <div className="flex flex-wrap gap-3 sm:gap-4 mb-6 sm:mb-8 text-white text-sm sm:text-base">
+        <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-lg">
+          <Calendar className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+          <span className="font-semibold whitespace-nowrap">Nov 12-14, 2025</span>
         </div>
-
-        {/* Network Dots Pattern */}
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle, rgba(100, 200, 255, 0.3) 1px, transparent 1px)',
-          backgroundSize: '50px 50px'
-        }}></div>
-
-        {/* Glowing Lines */}
-        <div className="absolute inset-0">
-          {[...Array(8)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute bg-gradient-to-b from-transparent via-cyan-400 to-transparent opacity-20"
-              style={{
-                width: '2px',
-                height: '100%',
-                left: `${15 + i * 12}%`,
-                animation: `glow ${3 + i * 0.5}s ease-in-out infinite`,
-                animationDelay: `${i * 0.3}s`
-              }}
-            ></div>
-          ))}
+        <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-lg">
+          <Clock className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+          <span className="font-semibold whitespace-nowrap">10 AM - 1 PM GMT</span>
         </div>
-
-        <style>{`
-          @keyframes pulse {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.1); }
-          }
-          @keyframes glow {
-            0%, 100% { opacity: 0.1; }
-            50% { opacity: 0.4; }
-          }
-        `}</style>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              2026 Pharma West & Africa Brand Planning Workshop
-            </h1>
-            
-            <p className="text-xl text-blue-100 leading-relaxed mb-8">
-              3 Days of Strategic Learning, Insight & Innovation in Pharma Marketing
-            </p>
-
-            <div className="flex flex-wrap gap-4 mb-8 text-white">
-              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
-                <Calendar className="w-5 h-5" />
-                <span className="font-semibold">Nov 12-14, 2025</span>
-              </div>
-              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
-                <Clock className="w-5 h-5" />
-                <span className="font-semibold">10 AM - 1 PM GMT</span>
-              </div>
-              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
-                <Globe className="w-5 h-5" />
-                <span className="font-semibold">Virtual Event</span>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-3 mb-10">
-              <span className="text-4xl">🇳🇬</span>
-              <span className="text-4xl">🇬🇭</span>
-              <span className="text-4xl">🇰🇪</span>
-              <span className="text-4xl">🇮🇳</span>
-            </div>
-
-            <div className="flex flex-wrap gap-4">
-              <a href="#register" className="bg-cyan-400 text-[#0D1854] px-8 py-4 rounded-lg font-bold hover:bg-cyan-300 transition-all transform hover:scale-105 shadow-xl">
-                Register Now
-              </a>
-              <a href="#about" className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-[#0D1854] transition-all font-bold">
-                Learn More
-              </a>
-            </div>
-          </div>
+        <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-lg">
+          <Globe className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+          <span className="font-semibold whitespace-nowrap">Virtual Event</span>
         </div>
-      </section>
+      </div>
+
+      <div className="flex items-center space-x-2 sm:space-x-3 mb-8 sm:mb-10">
+        <span className="text-2xl sm:text-3xl md:text-4xl">🇳🇬</span>
+        <span className="text-2xl sm:text-3xl md:text-4xl">🇬🇭</span>
+        <span className="text-2xl sm:text-3xl md:text-4xl">🇰🇪</span>
+        <span className="text-2xl sm:text-3xl md:text-4xl">🇮🇳</span>
+      </div>
+
+      <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+        <a 
+          href="#register" 
+          className="border-2 border-white bg-[#0D1854] text-[white] px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold hover:bg-[#0D1854] transition-all transform hover:scale-105 shadow-xl text-center text-sm sm:text-base"
+        >
+          Register Now
+        </a>
+        <a 
+          href="#about" 
+          className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-white hover:text-[#0D1854] transition-all font-bold text-center text-sm sm:text-base"
+        >
+          Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* About Section */}
       <section id="about" className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <div className="w-1 h-16 bg-[#0D1854] mb-6"></div>
             <h2 className="text-4xl lg:text-5xl font-bold text-[#0D1854] mb-8">
               About the Workshop
             </h2>
@@ -274,7 +200,7 @@ export default function PBRLandingPage() {
               
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" 
+                  src="/images/aattend.jpg" 
                   alt="Analytics Dashboard" 
                   className="rounded-lg shadow-2xl"
                 />
@@ -292,7 +218,6 @@ export default function PBRLandingPage() {
       <section id="agenda" className="py-20 px-6 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <div className="w-1 h-16 bg-[#0D1854] mb-6"></div>
             <h2 className="text-4xl lg:text-5xl font-bold text-[#0D1854] mb-4">
               Workshop Agenda
             </h2>
@@ -329,7 +254,6 @@ export default function PBRLandingPage() {
       <section id="speakers" className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <div className="w-1 h-16 bg-[#0D1854] mb-6"></div>
             <h2 className="text-4xl lg:text-5xl font-bold text-[#0D1854] mb-4">
               Meet Our Expert Speakers
             </h2>
@@ -343,7 +267,9 @@ export default function PBRLandingPage() {
               <div key={index} className="text-center group">
                 <div className="relative mb-6 mx-auto w-48 h-48">
                   <div className="w-48 h-48 rounded-full bg-gradient-to-br from-[#0D1854] to-[#265F9C] flex items-center justify-center overflow-hidden shadow-xl group-hover:shadow-2xl transition-all transform group-hover:scale-105">
-                    <div className="w-40 h-40 rounded-full bg-white"></div>
+                    <div className="w-40 h-40 rounded-full bg-white">
+                      <img src={speaker.image} alt={speaker.name} className="w-full h-full object-cover rounded-full" />
+                    </div>
                   </div>
                   <div className="absolute bottom-0 right-0 text-4xl">{speaker.flag}</div>
                 </div>
@@ -470,54 +396,7 @@ export default function PBRLandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#0D1854] text-white py-12 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="text-2xl font-bold tracking-wider mb-2" style={{fontFamily: 'monospace'}}>PBR</div>
-              <div className="text-sm tracking-widest text-cyan-300 mb-4">LIFE SCIENCES</div>
-              <p className="text-blue-200 text-sm leading-relaxed">
-                Advancing pharmaceutical excellence across Africa through education and innovation.
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="font-bold mb-4 text-cyan-300 text-lg">Quick Links</h4>
-              <div className="space-y-2 text-sm">
-                <a href="#about" className="block text-blue-200 hover:text-cyan-300 transition-colors">About Workshop</a>
-                <a href="#speakers" className="block text-blue-200 hover:text-cyan-300 transition-colors">Speakers</a>
-                <a href="#agenda" className="block text-blue-200 hover:text-cyan-300 transition-colors">Agenda</a>
-                <a href="#register" className="block text-blue-200 hover:text-cyan-300 transition-colors">Register</a>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-bold mb-4 text-cyan-300 text-lg">Contact</h4>
-              <div className="space-y-2 text-sm text-blue-200">
-                <p>Email: info@pbrlifesciences.com</p>
-                <p>Phone: +234 XXX XXX XXXX</p>
-                <p>Website: www.pbrlifesciences.com</p>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-bold mb-4 text-cyan-300 text-lg">Follow Us</h4>
-              <div className="flex space-x-4">
-                <a href="#" className="w-10 h-10 bg-[#265F9C] rounded-full flex items-center justify-center hover:bg-cyan-400 transition-colors">
-                  <span className="text-lg">𝕏</span>
-                </a>
-                <a href="#" className="w-10 h-10 bg-[#265F9C] rounded-full flex items-center justify-center hover:bg-cyan-400 transition-colors">
-                  <span className="text-lg">in</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          <div className="border-t border-[#265F9C] pt-8 text-center text-blue-300 text-sm">
-            <p>&copy; 2025 PBR Life Sciences. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+     <Footer/>
     </div>
   );
 }
