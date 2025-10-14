@@ -2,17 +2,23 @@
 
 import React, { useEffect, useState } from 'react';
 import { CheckCircle, Mail, Calendar, Download } from 'lucide-react';
-import { useSearchParams } from 'next/navigation';
 
 export default function SuccessPage() {
-  const searchParams = useSearchParams();
-  const sessionId = searchParams.get('session_id');
   const [loading, setLoading] = useState(true);
+  const [sessionId, setSessionId] = useState<string | null>(null);
 
   useEffect(() => {
+    // Get session_id from URL on client side
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      setSessionId(params.get('session_id'));
+    }
+
     // Simulate loading
     setTimeout(() => setLoading(false), 1000);
+  }, []);
 
+  useEffect(() => {
     // Optional: You can verify the session with Stripe here
     if (sessionId) {
       console.log('Payment session ID:', sessionId);
