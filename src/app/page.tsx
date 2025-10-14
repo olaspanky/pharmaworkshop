@@ -180,7 +180,7 @@ export default function PBRLandingPage() {
               <div>
                 <h3 className="text-3xl font-bold text-slate-900 mb-6">Why Attend?</h3>
                 <p className="text-lg text-slate-700 leading-relaxed mb-6">
-                  A 3-day virtual workshop designed to equip Africa's pharma professionals with practical tools for strategic brand planning, market analytics, and digital excellence — led by seasoned experts across Nigeria, Ghana, Kenya, and India.
+                  A 3-day virtual workshop designed to equip Africa's pharma professionals with practical tools for strategic brand planning, market analytics, and digital excellence — led by seasoned experts across Nigeria, Ghana, Kenya, Switzerland and India.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
