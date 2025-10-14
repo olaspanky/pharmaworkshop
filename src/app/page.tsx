@@ -1,8 +1,9 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { Calendar, Clock, Globe, Users, TrendingUp, Lightbulb, Target, ChevronRight, Menu, X, BarChart3, Presentation, Rocket } from 'lucide-react';
+import { Calendar, Clock, MapPin, Users, TrendingUp, Lightbulb, Target, ChevronRight, Menu, X, BarChart3, Presentation, Rocket } from 'lucide-react';
 import { Nav } from './components/Nav';
 import  Footer  from './components/Footer';
+import StripeCheckoutPage from './components/CheckooutForm';
 
 export default function PBRLandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,7 +61,7 @@ export default function PBRLandingPage() {
       name: "Mr. Adeoye Sobande",
       country: "Nigeria",
       flag: "🇳🇬",
-      image: "/images/as.jpg"
+      image: "/images/asb.png"
     },
     {
       name: "Mr. Adedayo Ogunpitan",
@@ -70,10 +71,10 @@ export default function PBRLandingPage() {
 
     },
     {
-      name: "Mr. Martins Muguira",
+      name: "Despina Loannides",
       country: "Kenya",
       flag: "🇰🇪",
-            image: "/images/as.jpg"
+            image: "/images/msp22.png"
 
     }
   ];
@@ -119,7 +120,7 @@ export default function PBRLandingPage() {
   <div className="max-w-7xl mx-auto relative z-10 w-full">
     <div className="max-w-3xl">
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 sm:mb-6 text-balance">
-        2026 Pharma West & Africa Brand Planning Workshop
+        2026 Pharma West & East Africa Brand Planning Workshop
       </h1>
       
       <p className="text-base sm:text-lg md:text-xl text-blue-100 leading-relaxed mb-6 sm:mb-8 text-balance">
@@ -136,7 +137,7 @@ export default function PBRLandingPage() {
           <span className="font-semibold whitespace-nowrap">10 AM - 1 PM GMT</span>
         </div>
         <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-lg">
-          <Globe className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+          <MapPin className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
           <span className="font-semibold whitespace-nowrap">Virtual Event</span>
         </div>
       </div>
@@ -145,7 +146,6 @@ export default function PBRLandingPage() {
         <span className="text-2xl sm:text-3xl md:text-4xl">🇳🇬</span>
         <span className="text-2xl sm:text-3xl md:text-4xl">🇬🇭</span>
         <span className="text-2xl sm:text-3xl md:text-4xl">🇰🇪</span>
-        <span className="text-2xl sm:text-3xl md:text-4xl">🇮🇳</span>
       </div>
 
       <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
@@ -267,7 +267,7 @@ export default function PBRLandingPage() {
               <div key={index} className="text-center group">
                 <div className="relative mb-6 mx-auto w-48 h-48">
                   <div className="w-48 h-48 rounded-full bg-gradient-to-br from-[#0D1854] to-[#265F9C] flex items-center justify-center overflow-hidden shadow-xl group-hover:shadow-2xl transition-all transform group-hover:scale-105">
-                    <div className="w-40 h-40 rounded-full bg-white">
+                    <div className="w-40 h-40 rounded-full bg-blue-100">
                       <img src={speaker.image} alt={speaker.name} className="w-full h-full object-cover rounded-full" />
                     </div>
                   </div>
@@ -283,9 +283,8 @@ export default function PBRLandingPage() {
 
       {/* Registration Section */}
       <section id="register" className="p-2lg:py-20 lg:px-6 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto p-6">
           <div className="mb-12">
-            <div className="w-1 h-16 bg-[#0D1854] mb-6"></div>
             <h2 className="text-4xl lg:text-5xl font-bold text-[#0D1854] mb-4">
               Secure Your Spot
             </h2>
@@ -297,7 +296,7 @@ export default function PBRLandingPage() {
           <div className="bg-white border border-slate-200 rounded-xl p-3 lg:p-8 lg:p-12 shadow-xl">
             <div className="grid lg:grid-cols-2 gap-12">
               <div className="bg-gradient-to-br from-[#0D1854] to-[#265F9C] text-white rounded-xl p-8 shadow-lg">
-                <h3 className="text-2xl font-bold mb-6">Investment Options</h3>
+                <h3 className="text-2xl font-bold mb-6">Registeration Options</h3>
                 <div className="space-y-3">
                   {paymentOptions.map((option, index) => (
                     <label key={index} className="flex items-center space-x-3 cursor-pointer hover:bg-white/10 p-4 rounded-lg transition">
@@ -312,83 +311,7 @@ export default function PBRLandingPage() {
               </div>
 
               <div>
-                <div className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-semibold text-slate-700 mb-2">Full Name *</label>
-                      <input 
-                        type="text" 
-                        value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
-                        className="w-full px-4 py-3 border-2 border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#265F9C] focus:border-transparent transition" 
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-slate-700 mb-2">Email Address *</label>
-                      <input 
-                        type="email" 
-                        value={formData.email}
-                        onChange={(e) => setFormData({...formData, email: e.target.value})}
-                        className="w-full px-4 py-3 border-2 border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#265F9C] focus:border-transparent transition" 
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-semibold text-slate-700 mb-2">Phone Number *</label>
-                      <input 
-                        type="tel" 
-                        value={formData.phone}
-                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                        className="w-full px-4 py-3 border-2 border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#265F9C] focus:border-transparent transition" 
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-slate-700 mb-2">Select Country *</label>
-                      <select 
-                        value={selectedCountry}
-                        onChange={(e) => setSelectedCountry(e.target.value)}
-                        className="w-full px-4 py-3 border-2 border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#265F9C] focus:border-transparent transition"
-                      >
-                        <option value="">Select country</option>
-                        <option value="nigeria">Nigeria</option>
-                        <option value="ghana">Ghana</option>
-                        <option value="kenya">Kenya</option>
-                        <option value="other-africa">Other African countries</option>
-                        <option value="international">International</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">Organisation *</label>
-                    <input 
-                      type="text" 
-                      value={formData.organization}
-                      onChange={(e) => setFormData({...formData, organization: e.target.value})}
-                      className="w-full px-4 py-3 border-2 border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#265F9C] focus:border-transparent transition" 
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-2">Your Role *</label>
-                    <input 
-                      type="text" 
-                      value={formData.role}
-                      onChange={(e) => setFormData({...formData, role: e.target.value})}
-                      placeholder="e.g., Marketing Manager, Brand Director" 
-                      className="w-full px-4 py-3 border-2 border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#265F9C] focus:border-transparent transition" 
-                    />
-                  </div>
-
-                  <button 
-                    onClick={handleSubmit}
-                    className="w-full bg-gradient-to-r from-[#265F9C] to-[#0D1854] text-white px-8 py-4 rounded-lg font-bold hover:shadow-xl transition-all transform hover:scale-105"
-                  >
-                    Complete Registration
-                  </button>
-                </div>
+              <StripeCheckoutPage/>
               </div>
             </div>
           </div>
