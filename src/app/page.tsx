@@ -336,18 +336,7 @@ const speakers = [
         </div>
       </section>
 
-      {/* Speakers Section */}
-      <section id="speakers" className="py-20 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold text-[#0D1854] mb-4">
-              Meet Our Expert Speakers
-            </h2>
-            <p className="text-lg text-slate-600 max-w-2xl">
-              Learn from industry leaders with decades of combined experience in pharmaceutical marketing
-            </p>
-          </div>
-
+   
           {/* Speakers Section */}
 {/* Speakers Section */}
 <section id="speakers" className="py-20 px-6 bg-white">
@@ -393,9 +382,7 @@ const speakers = [
     </div>
   </div>
 </section>
-        </div>
-      </section>
-
+      
       {/* Registration Section */}
       <section id="register" className="p-2lg:py-20 lg:px-6 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="max-w-7xl mx-auto p-6">
