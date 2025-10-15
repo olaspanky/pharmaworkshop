@@ -4,6 +4,9 @@ import { Calendar, Clock, MapPin, Users, TrendingUp, Lightbulb, Target, ChevronR
 import { Nav } from './components/Nav';
 import  Footer  from './components/Footer';
 import StripeCheckoutPage from './components/CheckooutForm';
+   import { NG, GH, KE, CH, IN } from 'country-flag-icons/react/3x2';
+
+
 
 export default function PBRLandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,14 +59,66 @@ export default function PBRLandingPage() {
     alert('Registration submitted successfully!');
   };
 
+// const speakers = [
+//     {
+//       name: "Adeoye Sobande",
+//       title: "Chief Product & Innovation Officer",
+//       company: "PBR Life Sciences",
+//       country: "Nigeria",
+//       flag: "https://flagcdn.com/w80/ng.png",
+//       image: "/images/asb.png"
+//     },
+//     {
+//       name: "Adedayo Ogunpitan",
+//       title: "Head of Marketing",
+//       company: "Groupe Ethica",
+//       country: "Nigeria",
+//       flag: "https://flagcdn.com/w80/ng.png",
+//       image: "/images/ao.png"
+//     },
+//     {
+//       name: "Despina Loannides",
+//       title: "Senior Innovation Director",
+//       company: "dsm-firmenich",
+//       country: "Switzerland",
+//       flag: "https://flagcdn.com/w80/ch.png",
+//       image: "/images/msp22.png"
+//     },
+//     {
+//       name: "Grace Naa Ardua Nelson",
+//       title: "Regulatory Affairs Manager",
+//       company: "Novartis Sub-Saharan Africa",
+//       country: "Ghana",
+//       flag: "https://flagcdn.com/w80/gh.png",
+//       image: null
+//     },
+//     {
+//       name: "Venket Subramanian T",
+//       title: "Marketing Director",
+//       company: "SAI SAGAR Pharma Limited",
+//       country: "India",
+//       flag: "https://flagcdn.com/w80/in.png",
+//       image: null
+//     },
+//     {
+//       name: "Dr Alex Kimani",
+      // title: "Execuitve Director",
+      // company: "iKAN Africa Consult",
+//       country: "Kenya",
+//       flag: "https://flagcdn.com/w80/ke.png",
+//       image: null
+//     }
+//   ];
+
+
+
 const speakers = [
     {
       name: "Adeoye Sobande",
       title: "Chief Product & Innovation Officer",
+      company: "PBR Life Sciences",
       country: "Nigeria",
-            company: "PBR Life Sciences",
-
-      flag: "🇳🇬",
+      flag: NG,
       image: "/images/asb.png"
     },
     {
@@ -71,7 +126,7 @@ const speakers = [
       title: "Head of Marketing",
       company: "Groupe Ethica",
       country: "Nigeria",
-      flag: "🇳🇬",
+      flag: NG,
       image: "/images/ao.png"
     },
     {
@@ -79,7 +134,7 @@ const speakers = [
       title: "Senior Innovation Director",
       company: "dsm-firmenich",
       country: "Switzerland",
-      flag: "🇨🇭",
+      flag: CH,
       image: "/images/msp22.png"
     },
     {
@@ -87,10 +142,28 @@ const speakers = [
       title: "Regulatory Affairs Manager",
       company: "Novartis Sub-Saharan Africa",
       country: "Ghana",
-      flag: "🇬🇭",
+      flag: GH,
+      image: null
+    },
+    {
+      name: "Venket Subramanian T",
+      title: "Marketing Director",
+      company: "SAI SAGAR Pharma Limited",
+      country: "India",
+      flag: IN,
+      image: null
+    },
+    {
+      name: "Dr Alex Kimani",
+       title: "Execuitve Director",
+      company: "iKAN Africa Consult",
+      country: "Kenya",
+      flag: KE,
       image: null
     }
   ];
+
+
 
   const agenda = [
     {
@@ -276,6 +349,7 @@ const speakers = [
           </div>
 
           {/* Speakers Section */}
+{/* Speakers Section */}
 <section id="speakers" className="py-20 px-6 bg-white">
   <div className="max-w-7xl mx-auto">
     <div className="mb-12">
@@ -287,7 +361,7 @@ const speakers = [
       </p>
     </div>
 
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
       {speakers.map((speaker, index) => (
         <div key={index} className="text-center group">
           <div className="relative mb-6 mx-auto w-48 h-48">
@@ -304,7 +378,9 @@ const speakers = [
                 </div>
               )}
             </div>
-            <div className="absolute bottom-0 right-0 text-4xl">{speaker.flag}</div>
+            <div className="absolute bottom-2 right-2 w-10 h-10 rounded-full overflow-hidden shadow-lg border-2 border-white bg-white">
+              <speaker.flag title={speaker.country} className="w-full h-full" />
+            </div>
           </div>
           <h3 className="text-xl font-bold text-slate-900 mb-2">{speaker.name}</h3>
           <p className="text-[#265F9C] font-semibold mb-1">{speaker.title}</p>
