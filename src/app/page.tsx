@@ -228,11 +228,11 @@ const speakers = [
         </div>
       </div>
 
-      <div className="flex items-center space-x-2 sm:space-x-3 mb-8 sm:mb-10">
-        <span className="text-2xl sm:text-3xl md:text-4xl">🇳🇬</span>
-        <span className="text-2xl sm:text-3xl md:text-4xl">🇬🇭</span>
-        <span className="text-2xl sm:text-3xl md:text-4xl">🇰🇪</span>
-      </div>
+     <div className="flex items-center space-x-2 sm:space-x-5 mb-8 sm:mb-10">
+  <NG className="w-8 h-6 sm:w-10 sm:h-8 md:w-12 md:h-9" />
+  <GH className="w-8 h-6 sm:w-10 sm:h-8 md:w-12 md:h-9" />
+  <KE className="w-8 h-6 sm:w-10 sm:h-8 md:w-12 md:h-9" />
+</div>
 
       <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
         <a 
