@@ -61,6 +61,8 @@ const speakers = [
       name: "Adeoye Sobande",
       title: "Chief Product & Innovation Officer",
       country: "Nigeria",
+            company: "PBR Life Sciences",
+
       flag: "🇳🇬",
       image: "/images/asb.png"
     },
