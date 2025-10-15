@@ -56,26 +56,37 @@ export default function PBRLandingPage() {
     alert('Registration submitted successfully!');
   };
 
-  const speakers = [
+const speakers = [
     {
-      name: "Mr. Adeoye Sobande",
+      name: "Adeoye Sobande",
+      title: "Chief Product & Innovation Officer",
       country: "Nigeria",
       flag: "🇳🇬",
       image: "/images/asb.png"
     },
     {
-      name: "Mr. Adedayo Ogunpitan",
+      name: "Adedayo Ogunpitan",
+      title: "Head of Marketing",
+      company: "Groupe Ethica",
       country: "Nigeria",
       flag: "🇳🇬",
-            image: "/images/ao.png"
-
+      image: "/images/ao.png"
     },
     {
       name: "Despina Loannides",
-      country: "Kenya",
-      flag: "🇰🇪",
-            image: "/images/msp22.png"
-
+      title: "Senior Innovation Director",
+      company: "dsm-firmenich",
+      country: "Switzerland",
+      flag: "🇨🇭",
+      image: "/images/msp22.png"
+    },
+    {
+      name: "Grace Naa Ardua Nelson",
+      title: "Regulatory Affairs Manager",
+      company: "Novartis Sub-Saharan Africa",
+      country: "Ghana",
+      flag: "🇬🇭",
+      image: null
     }
   ];
 
@@ -262,22 +273,48 @@ export default function PBRLandingPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12">
-            {speakers.map((speaker, index) => (
-              <div key={index} className="text-center group">
-                <div className="relative mb-6 mx-auto w-48 h-48">
-                  <div className="w-48 h-48 rounded-full bg-gradient-to-br from-[#0D1854] to-[#265F9C] flex items-center justify-center overflow-hidden shadow-xl group-hover:shadow-2xl transition-all transform group-hover:scale-105">
-                    <div className="w-40 h-40 rounded-full bg-blue-100">
-                      <img src={speaker.image} alt={speaker.name} className="w-full h-full object-cover rounded-full" />
-                    </div>
-                  </div>
-                  <div className="absolute bottom-0 right-0 text-4xl">{speaker.flag}</div>
+          {/* Speakers Section */}
+<section id="speakers" className="py-20 px-6 bg-white">
+  <div className="max-w-7xl mx-auto">
+    <div className="mb-12">
+      <h2 className="text-4xl lg:text-5xl font-bold text-[#0D1854] mb-4">
+        Meet Our Expert Speakers
+      </h2>
+      <p className="text-lg text-slate-600 max-w-2xl">
+        Learn from industry leaders with decades of combined experience in pharmaceutical marketing
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+      {speakers.map((speaker, index) => (
+        <div key={index} className="text-center group">
+          <div className="relative mb-6 mx-auto w-48 h-48">
+            <div className="w-48 h-48 rounded-full bg-gradient-to-br from-[#0D1854] to-[#265F9C] flex items-center justify-center overflow-hidden shadow-xl group-hover:shadow-2xl transition-all transform group-hover:scale-105">
+              {speaker.image ? (
+                <div className="w-46 h-46 rounded-full bg-blue-100">
+                  <img src={speaker.image} alt={speaker.name} className="w-full h-full object-cover rounded-full" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">{speaker.name}</h3>
-                <p className="text-[#265F9C] font-medium">{speaker.country}</p>
-              </div>
-            ))}
+              ) : (
+                <div className="w-full h-full rounded-full bg-gradient-to-br from-cyan-400 to-blue-300 flex items-center justify-center">
+                  <span className="text-6xl font-bold text-white">
+                    {speaker.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                  </span>
+                </div>
+              )}
+            </div>
+            <div className="absolute bottom-0 right-0 text-4xl">{speaker.flag}</div>
           </div>
+          <h3 className="text-xl font-bold text-slate-900 mb-2">{speaker.name}</h3>
+          <p className="text-[#265F9C] font-semibold mb-1">{speaker.title}</p>
+          {speaker.company && (
+            <p className="text-slate-600 text-sm mb-1">{speaker.company}</p>
+          )}
+          <p className="text-slate-500 text-sm">{speaker.country}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
         </div>
       </section>
 
