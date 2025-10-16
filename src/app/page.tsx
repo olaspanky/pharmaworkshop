@@ -421,7 +421,7 @@ const speakers = [
       
       {/* Registration Section */}
       <section id="register" className="p-2lg:py-20 lg:px-6 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="max-w-7xl mx-auto p-6">
+        <div className="max-w-7xl mx-auto p-2 lg:p-6">
           <div className="mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-[#0D1854] mb-4">
               Secure Your Spot

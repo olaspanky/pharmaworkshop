@@ -142,17 +142,17 @@ export default function StripeCheckoutPage() {
   }, [error]);
 
   return (
-    <div className=" py-12 px-4 text-black" >
-      <div className="max-w-3xl mx-auto">
+    <div className=" py-12 lg:px-4 text-black" >
+      <div className="max-w-3xl lg:mx-auto">
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
           {/* Header */}
-          <div className="bg-gradient-to-r from-[#265F9C] to-[#0D1854] p-8 text-white">
+          <div className="bg-gradient-to-r from-[#265F9C] to-[#0D1854] p-3 lg:p-8 text-white">
             <h1 className="text-3xl font-bold mb-2">Event Registration</h1>
             <p className="text-blue-100">Complete your registration and secure your spot</p>
           </div>
 
           {/* Form */}
-          <div className="p-8">
+          <div className="p-3 lg:p-8">
             {/* Error Message */}
             {error && (
               <div className="mb-6 p-4 bg-red-50 border-l-4 border-red-500 rounded flex items-start gap-3">
@@ -161,7 +161,7 @@ export default function StripeCheckoutPage() {
               </div>
             )}
 
-            <div className="space-y-6">
+            <div className="lg:space-y-6 space-y-2">
               {/* Personal Information */}
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
