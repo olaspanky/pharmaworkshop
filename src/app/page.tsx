@@ -119,7 +119,8 @@ const speakers = [
       company: "PBR Life Sciences",
       country: "Nigeria",
       flag: NG,
-      image: "/images/asb.png"
+      image: "/images/asb.png",
+      linkedin: "https://www.linkedin.com/in/adeoye-sobande-09970725/"
     },
     {
       name: "Adedayo Ogunpitan",
@@ -127,15 +128,17 @@ const speakers = [
       company: "Groupe Ethica",
       country: "Nigeria",
       flag: NG,
-      image: "/images/ao.png"
+      image: "/images/ao.png",
+      linkedin: "https://www.linkedin.com/in/dayo-ogunpitan/"
     },
     {
-      name: "Despina Loannides",
+      name: "Despina Ioannides",
       title: "Senior Innovation Director",
       company: "dsm-firmenich",
       country: "Switzerland",
       flag: CH,
-      image: "/images/msp22.png"
+      image: "/images/msp22.png",
+      linkedin: "https://www.linkedin.com/in/despoina-ioannidi-black?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
     },
     {
       name: "Grace Naa Ardua Nelson",
@@ -143,7 +146,9 @@ const speakers = [
       company: "Novartis Sub-Saharan Africa",
       country: "Ghana",
       flag: GH,
-      image: null
+      image: null,
+            linkedin: "https://www.linkedin.com/in/gracearmah/"
+
     },
     {
       name: "Venket Subramanian T",
@@ -151,15 +156,19 @@ const speakers = [
       company: "SAI SAGAR Pharma Limited",
       country: "India",
       flag: IN,
-      image: null
+      image: "/images/vt.png",
+            linkedin: ""
+
     },
     {
       name: "Dr Alex Kimani",
-       title: "Execuitve Director",
+       title: "Executive Director",
       company: "iKAN Africa Consult",
       country: "Kenya",
       flag: KE,
-      image: null
+      image: "/images/fm.png",
+            linkedin: "https://www.linkedin.com/in/dr-alex-kimani-leadership/"
+
     }
   ];
 
@@ -339,40 +348,67 @@ const speakers = [
    
           {/* Speakers Section */}
 {/* Speakers Section */}
-<section id="speakers" className="py-20 px-6 bg-white">
+<section id="speakers" className="py-24 px-6 bg-gray-50">
   <div className="max-w-7xl mx-auto">
-    <div className="mb-12">
-      <h2 className="text-4xl lg:text-5xl font-bold text-[#0D1854] mb-4">
+    <div className="mb-16 text-center">
+      <h2 className="text-4xl lg:text-5xl font-semibold text-[#0D1854] mb-4 tracking-tight">
         Meet Our Expert Speakers
       </h2>
-      <p className="text-lg text-slate-600 max-w-2xl">
+      <p className="text-lg text-slate-500 max-w-3xl mx-auto leading-relaxed">
         Learn from industry leaders with decades of combined experience in pharmaceutical marketing
       </p>
     </div>
 
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {speakers.map((speaker, index) => (
-        <div key={index} className="text-center group">
+        <div
+          key={index}
+          className="text-center bg-white rounded-xl shadow-md p-6 group hover:shadow-lg transition-shadow duration-300"
+        >
           <div className="relative mb-6 mx-auto w-48 h-48">
-            <div className="w-48 h-48 rounded-full bg-gradient-to-br from-[#0D1854] to-[#265F9C] flex items-center justify-center overflow-hidden shadow-xl group-hover:shadow-2xl transition-all transform group-hover:scale-105">
+            <div className="w-48 h-48 rounded-full bg-gradient-to-br from-[#0D1854] to-[#3B82F6] flex items-center justify-center overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
               {speaker.image ? (
                 <div className="w-46 h-46 rounded-full bg-blue-100">
-                  <img src={speaker.image} alt={speaker.name} className="w-full h-full object-cover rounded-full" />
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    className="w-full h-full object-cover rounded-full"
+                  />
                 </div>
               ) : (
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-cyan-400 to-blue-300 flex items-center justify-center">
-                  <span className="text-6xl font-bold text-white">
+                <div className="w-full h-full rounded-full bg-gradient-to-br from-cyan-300 to-blue-200 flex items-center justify-center">
+                  <span className="text-5xl font-semibold text-white">
                     {speaker.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
                   </span>
                 </div>
               )}
             </div>
-            <div className="absolute bottom-2 right-2 w-10 h-10 rounded-full overflow-hidden shadow-lg border-2 border-white bg-white">
+            <div className="absolute bottom-2 right-2 w-10 h-10 rounded-full overflow-hidden shadow-md border-2 border-white bg-white">
               <speaker.flag title={speaker.country} className="w-full h-full" />
             </div>
+            {speaker.linkedin && (
+              <a
+                href={speaker.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-2 left-2 w-10 h-10 rounded-full bg-white border-2 border-white shadow-md flex items-center justify-center text-[#0A66C2] hover:text-[#004182] hover:bg-gray-100 transition-all duration-300 transform hover:scale-110"
+                aria-label={`LinkedIn profile of ${speaker.name}`}
+                title="View LinkedIn profile"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-1.337-.03-3.06-1.866-3.06-1.867 0-2.152 1.458-2.152 2.966v5.698h-3v-11h2.878v1.496h.04c.4-.756 1.378-1.552 2.834-1.552 3.03 0 3.586 1.993 3.586 4.582v6.474z"/>
+                </svg>
+              </a>
+            )}
           </div>
-          <h3 className="text-xl font-bold text-slate-900 mb-2">{speaker.name}</h3>
-          <p className="text-[#265F9C] font-semibold mb-1">{speaker.title}</p>
+          <h3 className="text-xl font-semibold text-slate-900 mb-2 tracking-tight">{speaker.name}</h3>
+          <p className="text-[#3B82F6] font-medium text-sm mb-1">{speaker.title}</p>
           {speaker.company && (
             <p className="text-slate-600 text-sm mb-1">{speaker.company}</p>
           )}
