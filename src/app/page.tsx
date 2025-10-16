@@ -434,7 +434,7 @@ const speakers = [
           <div className="bg-white border border-slate-200 rounded-xl p-3 lg:p-8 lg:p-12 shadow-xl">
             <div className="grid lg:grid-cols-2 gap-12">
               <div className="bg-gradient-to-br from-[#0D1854] to-[#265F9C] text-white rounded-xl p-8 shadow-lg">
-                <h3 className="text-2xl font-bold mb-6">Registeration Options</h3>
+                <h3 className="text-2xl font-bold mb-6">Registration Options</h3>
                 <div className="space-y-3">
                   {paymentOptions.map((option, index) => (
                     <label key={index} className="flex items-center space-x-3 cursor-pointer hover:bg-white/10 p-4 rounded-lg transition">
