@@ -233,7 +233,7 @@ const speakers = [
         </div>
         <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-lg">
           <Clock className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-          <span className="font-semibold whitespace-nowrap">10 AM - 1 PM GMT</span>
+          <span className="font-semibold whitespace-nowrap">10 AM - 1 PM WAT</span>
         </div>
         <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-lg">
           <MapPin className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
@@ -436,21 +436,8 @@ const speakers = [
           </div>
 
           <div className="bg-white border border-slate-200 rounded-xl p-3 lg:p-8 lg:p-12 shadow-xl">
-            <div className="grid lg:grid-cols-2 gap-12">
-              <div className="bg-gradient-to-br from-[#0D1854] to-[#265F9C] text-white rounded-xl p-8 shadow-lg">
-                <h3 className="text-2xl font-bold mb-6">Registration Options</h3>
-                <div className="space-y-3">
-                  {paymentOptions.map((option, index) => (
-                    <label key={index} className="flex items-center space-x-3 cursor-pointer hover:bg-white/10 p-4 rounded-lg transition">
-                      <input type="radio" name="payment" className="w-5 h-5 accent-cyan-400" />
-                      <div className="flex-1">
-                        <div className="font-semibold">{option.country}</div>
-                        <div className="text-2xl font-bold text-cyan-300">{option.amount}</div>
-                      </div>
-                    </label>
-                  ))}
-                </div>
-              </div>
+            <div className="gap-12">
+              
 
               <div>
               <StripeCheckoutPage/>

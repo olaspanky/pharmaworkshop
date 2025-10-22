@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { CreditCard, CheckCircle, AlertCircle, Shield } from 'lucide-react';
+import { CreditCard, CheckCircle, AlertCircle, Shield, MapPin } from 'lucide-react';
 
 interface FormData {
   name: string;
@@ -19,45 +19,33 @@ interface PricingTier {
   label: string;
 }
 
-type Country = 'nigeria' | 'ghana' | 'kenya' | 'other-africa' | 'international';
+type Country = 'Africa' | 'non-African';
 
 const pricingTiers: Record<Country, PricingTier> = {
-  'nigeria': {
-    amount: 5000000, // Amount in kobo (50,000 NGN)
-    currency: 'ngn',
-    symbol: '₦',
-    display: '50,000',
-    label: 'Nigeria – NGN 50,000'
-  },
-  'ghana': {
-    amount: 120000, // Amount in pesewas (1,200 GHS)
-    currency: 'ghs',
-    symbol: 'GH₵',
-    display: '1,200',
-    label: 'Ghana – GHS 1,200'
-  },
-  'kenya': {
-    amount: 750000, // Amount in cents (7,500 KES)
-    currency: 'kes',
-    symbol: 'KSh',
-    display: '7,500',
-    label: 'Kenya – KES 7,500'
-  },
-  'other-africa': {
-    amount: 5000, // Amount in cents (50 USD)
-    currency: 'usd',
+  'Africa': {
+    amount: 50,
+    currency: 'USD',
     symbol: '$',
     display: '50',
-    label: 'Other African countries – $50'
+    label: 'Africa – $50'
   },
-  'international': {
-    amount: 15000, // Amount in cents (150 USD)
-    currency: 'usd',
+  'non-African': {
+    amount: 150,
+    currency: 'USD',
     symbol: '$',
     display: '150',
-    label: 'International – $150'
-  }
+    label: 'non-African – $150'
+  },
 };
+
+// List of African country codes (ISO 3166-1 alpha-2)
+const africanCountries = [
+  'DZ', 'AO', 'BJ', 'BW', 'BF', 'BI', 'CM', 'CV', 'CF', 'TD', 'KM', 'CG', 'CD',
+  'CI', 'DJ', 'EG', 'GQ', 'ER', 'ET', 'GA', 'GM', 'GH', 'GN', 'GW', 'KE', 'LS',
+  'LR', 'LY', 'MG', 'MW', 'ML', 'MR', 'MU', 'YT', 'MA', 'MZ', 'NA', 'NE', 'NG',
+  'RE', 'RW', 'ST', 'SN', 'SC', 'SL', 'SO', 'ZA', 'SS', 'SD', 'SZ', 'TZ', 'TG',
+  'TN', 'UG', 'ZM', 'ZW', 'EH'
+];
 
 export default function StripeCheckoutPage() {
   const [formData, setFormData] = useState<FormData>({
@@ -71,6 +59,47 @@ export default function StripeCheckoutPage() {
   const [selectedCountry, setSelectedCountry] = useState<Country | ''>('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [geoLoading, setGeoLoading] = useState(true);
+  const [detectedLocation, setDetectedLocation] = useState<string>('');
+  const [detectedRegion, setDetectedRegion] = useState<string>('');
+
+  // Detect user's location on component mount
+  useEffect(() => {
+    const detectLocation = async () => {
+      try {
+        setGeoLoading(true);
+        
+        // Using ipapi.co - free tier allows 1,000 requests per day
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+
+        if (data.country_code) {
+          const countryCode = data.country_code;
+          const countryName = data.country_name;
+          const isAfrican = africanCountries.includes(countryCode);
+          
+          setDetectedLocation(countryName);
+          setSelectedCountry(isAfrican ? 'Africa' : 'non-African');
+          setDetectedRegion(isAfrican ? 'Africa' : 'Non-African Region');
+        } else {
+          // Default to non-African if detection fails
+          setSelectedCountry('non-African');
+          setDetectedRegion('Non-African Region');
+          setDetectedLocation('Unknown');
+        }
+      } catch (err) {
+        console.error('Geolocation detection failed:', err);
+        // Default to non-African pricing if detection fails
+        setSelectedCountry('non-African');
+        setDetectedRegion('Non-African Region');
+        setDetectedLocation('Unknown');
+      } finally {
+        setGeoLoading(false);
+      }
+    };
+
+    detectLocation();
+  }, []);
 
   const validateForm = (): boolean => {
     if (!formData.name || !formData.email || !formData.phone || !formData.organization || !formData.role) {
@@ -78,13 +107,13 @@ export default function StripeCheckoutPage() {
       return false;
     }
 
-    if (!selectedCountry) {
-      setError('Please select a country');
+    if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      setError('Please enter a valid email address');
       return false;
     }
 
-    if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      setError('Please enter a valid email address');
+    if (!selectedCountry) {
+      setError('Unable to detect your location. Please refresh the page and try again.');
       return false;
     }
 
@@ -142,7 +171,7 @@ export default function StripeCheckoutPage() {
   }, [error]);
 
   return (
-    <div className=" py-12 lg:px-4 text-black" >
+    <div className="py-12 lg:px-4 text-black">
       <div className="max-w-3xl lg:mx-auto">
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
           {/* Header */}
@@ -153,6 +182,8 @@ export default function StripeCheckoutPage() {
 
           {/* Form */}
           <div className="p-3 lg:p-8">
+           
+
             {/* Error Message */}
             {error && (
               <div className="mb-6 p-4 bg-red-50 border-l-4 border-red-500 rounded flex items-start gap-3">
@@ -205,20 +236,12 @@ export default function StripeCheckoutPage() {
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">
-                    Select Country *
+                    Your Region
                   </label>
-                  <select
-                    value={selectedCountry}
-                    onChange={(e) => setSelectedCountry(e.target.value as Country)}
-                    className="w-full px-4 py-3 border-2 border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#265F9C] focus:border-transparent transition"
-                  >
-                    <option value="">Select country</option>
-                    {Object.entries(pricingTiers).map(([key, value]) => (
-                      <option key={key} value={key}>
-                        {value.label}
-                      </option>
-                    ))}
-                  </select>
+                  <div className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg bg-slate-50 text-slate-700 flex items-center gap-2">
+                    <MapPin className="w-4 h-4 text-[#265F9C]" />
+                    <span>{geoLoading ? 'Detecting...' : detectedRegion || 'Non-African Region'}</span>
+                  </div>
                 </div>
               </div>
 
@@ -249,7 +272,7 @@ export default function StripeCheckoutPage() {
               </div>
 
               {/* Pricing Display */}
-              {selectedCountry && (
+              {!geoLoading && selectedCountry && (
                 <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg border-2 border-blue-200">
                   <div className="flex items-center justify-between">
                     <div>
@@ -258,6 +281,7 @@ export default function StripeCheckoutPage() {
                         {pricingTiers[selectedCountry as Country].symbol}
                         {pricingTiers[selectedCountry as Country].display}
                       </p>
+                    
                     </div>
                     <CreditCard className="w-12 h-12 text-[#265F9C]" />
                   </div>
@@ -267,10 +291,15 @@ export default function StripeCheckoutPage() {
               {/* Submit Button */}
               <button
                 onClick={handleSubmit}
-                disabled={loading}
+                disabled={loading || geoLoading}
                 className="w-full bg-gradient-to-r from-[#265F9C] to-[#0D1854] text-white px-8 py-4 rounded-lg font-bold hover:shadow-xl transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"
               >
-                {loading ? (
+                {geoLoading ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    Detecting Location...
+                  </>
+                ) : loading ? (
                   <>
                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                     Processing...
