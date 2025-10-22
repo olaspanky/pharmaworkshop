@@ -113,23 +113,15 @@ export default function PBRLandingPage() {
 
 
 const speakers = [
-    {
-      name: "Adeoye Sobande",
-      title: "Chief Product & Innovation Officer",
-      company: "PBR Life Sciences",
-      country: "Nigeria",
-      flag: NG,
-      image: "/images/asb.png",
-      linkedin: "https://www.linkedin.com/in/adeoye-sobande-09970725/"
-    },
-    {
-      name: "Adedayo Ogunpitan",
-      title: "Head of Marketing",
-      company: "Groupe Ethica",
-      country: "Nigeria",
-      flag: NG,
-      image: "/images/ao.png",
-      linkedin: "https://www.linkedin.com/in/dayo-ogunpitan/"
+  {
+      name: "Venket Subramanian T",
+      title: "Marketing Director",
+      company: "SAI SAGAR Pharma Limited",
+      country: "India",
+      flag: IN,
+      image: "/images/vt.png",
+            linkedin: ""
+
     },
     {
       name: "Despina Ioannides",
@@ -141,6 +133,26 @@ const speakers = [
       linkedin: "https://www.linkedin.com/in/despoina-ioannidi-black?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
     },
     {
+      name: "Dr Alex Kimani",
+       title: "Executive Director",
+      company: "iKAN Africa Consult",
+      country: "Kenya",
+      flag: KE,
+      image: "/images/fm.png",
+            linkedin: "https://www.linkedin.com/in/dr-alex-kimani-leadership/"
+
+    },
+    {
+      name: "Adedayo Ogunpitan",
+      title: "Head of Marketing",
+      company: "Groupe Ethica",
+      country: "Nigeria",
+      flag: NG,
+      image: "/images/ao.png",
+      linkedin: "https://www.linkedin.com/in/dayo-ogunpitan/"
+    },
+    
+    {
       name: "Grace Naa Ardua Nelson",
       title: "Regulatory Affairs Manager",
       company: "Novartis Sub-Saharan Africa",
@@ -151,25 +163,17 @@ const speakers = [
 
     },
     {
-      name: "Venket Subramanian T",
-      title: "Marketing Director",
-      company: "SAI SAGAR Pharma Limited",
-      country: "India",
-      flag: IN,
-      image: "/images/vt.png",
-            linkedin: ""
-
+      name: "Adeoye Sobande",
+      title: "Chief Product & Innovation Officer",
+      company: "PBR Life Sciences",
+      country: "Nigeria",
+      flag: NG,
+      image: "/images/asb.png",
+      linkedin: "https://www.linkedin.com/in/adeoye-sobande-09970725/"
     },
-    {
-      name: "Dr Alex Kimani",
-       title: "Executive Director",
-      company: "iKAN Africa Consult",
-      country: "Kenya",
-      flag: KE,
-      image: "/images/fm.png",
-            linkedin: "https://www.linkedin.com/in/dr-alex-kimani-leadership/"
-
-    }
+    
+    
+    
   ];
 
 
