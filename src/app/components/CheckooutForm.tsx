@@ -23,14 +23,14 @@ type Country = 'Africa' | 'non-African';
 
 const pricingTiers: Record<Country, PricingTier> = {
   'Africa': {
-    amount: 50,
+    amount: 5000,
     currency: 'USD',
     symbol: '$',
     display: '50',
     label: 'Africa – $50'
   },
   'non-African': {
-    amount: 150,
+    amount: 15000,
     currency: 'USD',
     symbol: '$',
     display: '150',
