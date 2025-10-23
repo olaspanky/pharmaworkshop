@@ -337,7 +337,7 @@ export default function StripeCheckoutPage() {
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-slate-700 mb-2">
-                    {geoFailed ? 'Select Your Country *' : 'Your Region'}
+                    {geoFailed ? 'Select Your Country *' : 'Region'}
                   </label>
                   
                   {/* Show detected region if geo succeeded */}
