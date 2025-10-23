@@ -30,18 +30,18 @@ const pricingTiers: Record<Country, PricingTier> = {
     label: 'Nigeria – ₦50,000'
   },
   'Ghana': {
-    amount: 75000, // ~750 GHS in pesewas (100 pesewas = 1 GHS) - equivalent to $50 USD
+    amount: 54131, // ~750 GHS in pesewas (100 pesewas = 1 GHS) - equivalent to $50 USD
     currency: 'GHS',
     symbol: 'GH₵',
-    display: '750',
-    label: 'Ghana – GH₵750'
+    display: '541.31',
+    label: 'Ghana – GH₵541.31'
   },
   'Kenya': {
-    amount: 650000, // ~6,500 KES in cents (100 cents = 1 KES) - equivalent to $50 USD
+    amount: 645750, // ~6,500 KES in cents (100 cents = 1 KES) - equivalent to $50 USD
     currency: 'KES',
     symbol: 'KSh',
-    display: '6,500',
-    label: 'Kenya – KSh6,500'
+    display: '6,457.50',
+    label: 'Kenya – KSh6,6457.50'
   },
   'Africa': {
     amount: 5000, // $50 in cents
