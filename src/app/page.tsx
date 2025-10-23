@@ -158,7 +158,7 @@ const speakers = [
       company: "Novartis Sub-Saharan Africa",
       country: "Ghana",
       flag: GH,
-      image: null,
+      image: "/images/gn.png",
             linkedin: "https://www.linkedin.com/in/gracearmah/"
 
     },
