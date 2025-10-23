@@ -164,8 +164,8 @@ const speakers = [
     },
     {
       name: "Adeoye Sobande",
-      title: "Chief Product & Innovation Officer",
-      company: "PBR Life Sciences",
+      title: "Vice Presideant",
+      company: "Life Sciences Tech and Solutions Delivery",
       country: "Nigeria",
       flag: NG,
       image: "/images/asb.png",
@@ -329,7 +329,7 @@ const speakers = [
             {agenda.map((item, index) => {
               const Icon = item.icon;
               return (
-                <div key={index} className="bg-white border border-slate-200 rounded-xl p-8 hover:shadow-2xl transition-all transform hover:-translate-y-2">
+                <div key={index} className="bg-white border border-slate-200 rounded-xl p-8 ">
                   <div className="flex flex-col items-center text-center space-y-6">
                     <div className="relative">
                       <div className={`w-24 h-24 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center shadow-lg`}>
