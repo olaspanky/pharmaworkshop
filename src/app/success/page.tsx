@@ -75,8 +75,8 @@ export default function SuccessPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center p-4">
-      <div className="max-w-2xl w-full">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center  lg:p-4">
+      <div className="max-w-7xl w-full">
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
           {/* Success Header */}
           <div className="bg-gradient-to-r from-green-500 to-emerald-600 p-8 text-white text-center">
@@ -86,7 +86,7 @@ export default function SuccessPage() {
           </div>
 
           {/* Content */}
-          <div className="p-8">
+          <div className="p-4 lg:p-8">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-bold text-slate-800 mb-3">
                 Thank You for Registering!
