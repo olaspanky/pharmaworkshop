@@ -113,15 +113,15 @@ export default function PBRLandingPage() {
 
 
 const speakers = [
-  {
-      name: "Venket Subramanian T",
-      title: "Marketing Director",
-      company: "SAI SAGAR Pharma Limited",
-      country: "India",
-      flag: IN,
-      image: "/images/vt.png",
-            linkedin: ""
 
+    {
+      name: "Adeoye Sobande",
+      title: "Vice Presideant",
+      company: "Life Sciences Tech and Solutions Delivery",
+      country: "Nigeria",
+      flag: NG,
+      image: "/images/asb.png",
+      linkedin: "https://www.linkedin.com/in/adeoye-sobande-09970725/"
     },
     {
       name: "Despina Ioannides",
@@ -145,7 +145,7 @@ const speakers = [
     {
       name: "Adedayo Ogunpitan",
       title: "Head of Marketing",
-      company: "Groupe Ethica",
+      company: "Pharmasymbiosis/Resourcethica",
       country: "Nigeria",
       flag: NG,
       image: "/images/ao.png",
@@ -162,14 +162,15 @@ const speakers = [
             linkedin: "https://www.linkedin.com/in/gracearmah/"
 
     },
-    {
-      name: "Adeoye Sobande",
-      title: "Vice Presideant",
-      company: "Life Sciences Tech and Solutions Delivery",
-      country: "Nigeria",
-      flag: NG,
-      image: "/images/asb.png",
-      linkedin: "https://www.linkedin.com/in/adeoye-sobande-09970725/"
+      {
+      name: "Venket Subramanian T",
+      title: "Marketing Director",
+      company: "SAI SAGAR Pharma Limited",
+      country: "India",
+      flag: IN,
+      image: "/images/vt.png",
+            linkedin: ""
+
     },
     
     
