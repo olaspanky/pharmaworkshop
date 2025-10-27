@@ -116,7 +116,7 @@ const speakers = [
 
     {
       name: "Adeoye Sobande",
-      title: "Vice Presideant",
+      title: "Vice President",
       company: "Life Sciences Tech and Solutions Delivery",
       country: "Nigeria",
       flag: NG,
