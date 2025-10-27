@@ -267,7 +267,7 @@ const speakers = [
 </section>
 
       {/* About Section */}
-      <section id="about" className="p-3 lg:py-20 lg:px-6 bg-white">
+      <section id="about" className="p-3 py-20 lg:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="lg:mb-12 mb-5">
             <h2 className="text-4xl lg:text-5xl font-bold text-[#0D1854] mb-8">
