@@ -154,8 +154,8 @@ const speakers = [
     
     {
       name: "Grace Naa Ardua Nelson",
-      title: "Regulatory Affairs Manager",
-      company: "Novartis Sub-Saharan Africa",
+      title: "Regulatory Lead",
+      company: "Association of Representative of Ethical Pharmaceutical Industries (AREPI)",
       country: "Ghana",
       flag: GH,
       image: "/images/gn.png",
