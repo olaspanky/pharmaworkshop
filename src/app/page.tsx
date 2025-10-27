@@ -267,15 +267,15 @@ const speakers = [
 </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-6 bg-white">
+      <section id="about" className="p-3 lg:py-20 lg:px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
+          <div className="lg:mb-12 mb-5">
             <h2 className="text-4xl lg:text-5xl font-bold text-[#0D1854] mb-8">
               About the Workshop
             </h2>
           </div>
 
-          <div className="border border-slate-200 rounded-lg p-12 shadow-lg hover:shadow-xl transition-shadow">
+          <div className="border border-slate-200 rounded-lg p-3 lg:p-12 shadow-lg hover:shadow-xl transition-shadow">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h3 className="text-3xl font-bold text-slate-900 mb-6">Why Attend?</h3>
