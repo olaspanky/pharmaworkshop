@@ -56,7 +56,7 @@ interface Stats {
   recentActivity: Array<{ _id: string; count: number }>;
 }
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://marketback.vercel.app';
 
 export default function RegistrationDashboard() {
   const [authenticated, setAuthenticated] = useState(false);

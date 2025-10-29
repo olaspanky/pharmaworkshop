@@ -13,7 +13,7 @@ export default function Dashboard() {
     setError('');
     const cred = btoa(`admin:${pass}`);
     try {
-      const res = await fetch('http://localhost:3001/api/dashboard', {
+      const res = await fetch('https://marketback.vercel.app/api/dashboard', {
         headers: { Authorization: `Basic ${cred}` },
       });
       if (!res.ok) throw new Error('Wrong passkey');
