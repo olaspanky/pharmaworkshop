@@ -28,7 +28,7 @@ export default function SuccessPage() {
 
       try {
         // Call backend to verify payment and automatically send email
-        const API_URL = 'https://marketback.vercel.app';
+        const API_URL = 'http://localhost:3001';
         const response = await fetch(
           `${API_URL}/api/checkout-session/${sessionId}`
         );

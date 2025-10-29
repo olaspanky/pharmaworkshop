@@ -232,7 +232,7 @@ export default function StripeCheckoutPage() {
       const pricing = pricingTiers[selectedCountry as Country];
 
       // Call your API route to create checkout session
-      const response = await fetch('https://marketback.vercel.app/api/create-checkout-session', {
+      const response = await fetch('http://localhost:3001/api/create-checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
