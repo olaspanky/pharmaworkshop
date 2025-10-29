@@ -429,6 +429,9 @@ export default function RegistrationDashboard() {
                     Status
                   </th>
                   <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                    Payment Status
+                  </th>
+                  <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                     Date
                   </th>
                   <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
@@ -472,6 +475,9 @@ export default function RegistrationDashboard() {
                       </td>
                       <td className="px-6 py-4">
                         <StatusBadge status={reg.status} />
+                      </td>
+                      <td className="px-6 py-4">
+                        <StatusBadge status={reg.paymentStatus} />
                       </td>
                       <td className="px-6 py-4 text-sm text-gray-500">
                         {new Date(reg.createdAt).toLocaleDateString()}
