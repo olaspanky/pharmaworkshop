@@ -155,7 +155,7 @@ const speakers = [
     {
       name: "Grace Naa Ardua Nelson",
       title: "Regulatory Lead",
-      company: "Association of Representative of Ethical Pharmaceutical Industries (AREPI)",
+      company: "Association of Representatives of Ethical Pharmaceutical Industries (AREPI)",
       country: "Ghana",
       flag: GH,
       image: "/images/gn.png",
