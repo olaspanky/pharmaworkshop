@@ -476,7 +476,7 @@ export default function RegistrationDashboard() {
                       <td className="px-6 py-4">
                         <StatusBadge status={reg.status} />
                       </td>
-                      <td className="px-6 py-4">
+                      <td className="px-6 py-4 text-gray-900">
                         {reg.paymentStatus}
                       </td>
                       <td className="px-6 py-4 text-sm text-gray-500">
