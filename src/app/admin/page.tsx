@@ -477,7 +477,7 @@ export default function RegistrationDashboard() {
                         <StatusBadge status={reg.status} />
                       </td>
                       <td className="px-6 py-4">
-                        <StatusBadge status={reg.paymentStatus} />
+                        {reg.paymentStatus}
                       </td>
                       <td className="px-6 py-4 text-sm text-gray-500">
                         {new Date(reg.createdAt).toLocaleDateString()}
@@ -594,7 +594,10 @@ export default function RegistrationDashboard() {
                     <DollarSign className="w-4 h-4" />
                     Amount
                   </div>
+                  <div className='flex flex-col gap-1'>
                   <div className="font-medium text-gray-900">{selectedRegistration.amountDisplay}</div>
+                  <div className="font-medium text-gray-900">{selectedRegistration.paymentStatus}</div>
+                  </div> 
                 </div>
 
                 <div>
